@@ -1,4 +1,4 @@
-export const USERS_ABILITY_TO_SUGGEST = false;
+export const USERS_ABILITY_TO_SUGGEST = "USERS_ABILITY_TO_SUGGEST";
 
 export const usersAbilityToSuggest = (payload) => {
   return {

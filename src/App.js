@@ -1,26 +1,35 @@
-import React from "react";
-import logo from "./logo.svg";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import "./App.css";
+import { getAllMovieByName } from "./services/movies";
+import { clearSearchData } from "./redux/Movies/action";
 
 function App() {
+  const [param, setParam] = useState("");
+
   const name = useSelector((state) => state.UserReducer.name);
+  const movies = useSelector((state) => state.MovieReducer.searchData) || [];
+  const dispatch = useDispatch();
+
+  const renderMovies = movies.map((movie) => (
+    <p key={movie.id}>{movie.title}</p>
+  ));
+
+  const handleChange = (e) => {
+    setParam(e.target.value);
+  };
+
+  useEffect(() => {
+    if (param !== "") {
+      dispatch(getAllMovieByName(param));
+    } else {
+      dispatch(clearSearchData());
+    }
+  }, [param]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>{name}</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input onChange={handleChange} value={param} />
+      {renderMovies}
     </div>
   );
 }

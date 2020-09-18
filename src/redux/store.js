@@ -1,9 +1,11 @@
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import ReduxThunk from "redux-thunk";
 import UserReducer from "./User/Reducer";
+import MovieReducer from "./Movies/reducer";
 
 const rootReducer = combineReducers({
   UserReducer,
+  MovieReducer,
 });
 
 const composeEnhancer =
