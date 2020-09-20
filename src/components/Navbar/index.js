@@ -19,10 +19,12 @@ const Navbar = () => {
         >
           &#9660;
         </button>
-        <ul className="dropdown">
-          <li>Setting</li>
-          <li>Log out</li>
-        </ul>
+        {show && (
+          <ul className="dropdown">
+            <li>Setting</li>
+            <li>Log out</li>
+          </ul>
+        )}
       </div>
     </nav>
   );

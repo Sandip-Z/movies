@@ -124,6 +124,17 @@ nav {
 
 .dropdown {
   position: absolute;
-  top: 15px;
+  background-color: grey;
+  top: 55px;
+  right: 284px;
   list-style: none;
+}
+
+.dropdown li {
+  padding: 15px 30px;
+}
+
+.dropdown li:hover {
+  background-color: lightgray;
+  cursor: pointer;
 }
