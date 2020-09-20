@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearSearchData } from "../../redux/Movies/action";
 import { getAllMovieByName } from "../../services/movies";
+import debounce from "../../utils/debounce";
 import DisplayResult from "./DisplayResult";
 
 const SearchBox = () => {
@@ -9,11 +10,9 @@ const SearchBox = () => {
   const movies = useSelector((state) => state.MovieReducer.searchData) || [];
   const dispatch = useDispatch();
 
-  // const renderMovies = movies.map(movie => <p key={movie.id}>{movie.title}</p>)
-
-  const handleInputChange = (e) => {
-    setParam(e.target.value);
-  };
+  const handleInputChange = debounce((value) => {
+    setParam(value);
+  }, 500);
 
   useEffect(() => {
     if (param !== "") {
@@ -25,7 +24,7 @@ const SearchBox = () => {
 
   return (
     <>
-      <input onChange={handleInputChange} value={param} />
+      <input onChange={(e) => handleInputChange(e.target.value)} />
       <DisplayResult results={movies} />
     </>
   );
