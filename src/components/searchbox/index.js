@@ -23,10 +23,10 @@ const SearchBox = () => {
   }, [param]);
 
   return (
-    <>
+    <div className="search-box">
       <input onChange={(e) => handleInputChange(e.target.value)} />
       <DisplayResult results={movies} />
-    </>
+    </div>
   );
 };
 
