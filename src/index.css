@@ -94,18 +94,26 @@ nav {
   margin: 0 7px;
   border: 0;
   box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.4s;
+  /* transition: all 0.4s; */
 }
 
 .btn:hover {
   transform: translateY(1px);
-  transition: all 0.4s;
+  /* transition: all 0.4s; */
 }
 
 .btn-primary {
   background-color: tomato;
 }
 
+.btn-primary:hover {
+  background-color: rgb(240, 93, 68);
+}
+
 .btn-secondary {
   background-color: rgb(240, 238, 240);
+}
+
+.btn-secondary:hover {
+  background-color: whitesmoke;
 }
