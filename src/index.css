@@ -117,3 +117,13 @@ nav {
 .btn-secondary:hover {
   background-color: whitesmoke;
 }
+
+.btn-tertiary {
+  background-color: rgb(37, 34, 34);
+}
+
+.dropdown {
+  position: absolute;
+  top: 15px;
+  list-style: none;
+}
