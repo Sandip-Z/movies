@@ -145,3 +145,15 @@ nav {
   height: 120px;
   /* margin: 10px 0; */
 }
+
+.cross-button {
+  background-color: rgb(180, 179, 179);
+  padding: 3px 10px;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+.cross-button:hover {
+  background-color: tomato;
+  cursor: pointer;
+}

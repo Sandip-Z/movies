@@ -1,4 +1,5 @@
 import React from "react";
+import CrossButton from "./CrossButton";
 
 const DisplayMovie = ({ movie }) => {
   //   console.log(movie);
@@ -37,9 +38,7 @@ const DisplayMovie = ({ movie }) => {
           Download
         </a>
       </div>
-      <div className="cross-button text-dark">
-        <p>X</p>
-      </div>
+      <CrossButton handleClick={() => console.log("clicked")} />
     </div>
   );
 };
