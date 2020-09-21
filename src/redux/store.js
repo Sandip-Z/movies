@@ -2,10 +2,15 @@ import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import ReduxThunk from "redux-thunk";
 import UserReducer from "./User/Reducer";
 import MovieReducer from "./Movies/reducer";
-
+import MovieToWatchReducer from "./Movies/ToWatchReducer";
+import MovieWatchingReducer from "./Movies/WatchingReducer";
+import MovieWatchedReducer from "./Movies/WatchedReducer";
 const rootReducer = combineReducers({
   UserReducer,
   MovieReducer,
+  MovieToWatchReducer,
+  MovieWatchingReducer,
+  MovieWatchedReducer,
 });
 
 const composeEnhancer =

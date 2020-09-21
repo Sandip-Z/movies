@@ -1,8 +1,15 @@
 import React from "react";
 import CrossButton from "./CrossButton";
+import { useDispatch } from "react-redux";
+import {
+  removeFromToWatch,
+  removeFromWatched,
+  removeFromWatching,
+} from "../../redux/Movies/action";
 
-const DisplayMovie = ({ movie }) => {
+const DisplayMovie = ({ movie, section }) => {
   //   console.log(movie);
+  const dispatch = useDispatch();
 
   const styles = {
     display: "flex",
@@ -18,6 +25,22 @@ const DisplayMovie = ({ movie }) => {
   const renderGenres = movie.genres.map((genre) => {
     return <code key={genre}>{genre}</code>;
   });
+
+  const handleCrossClick = () => {
+    switch (section) {
+      case "toWatch":
+        dispatch(removeFromToWatch(movie.id));
+        return;
+      case "watching":
+        dispatch(removeFromWatching(movie.id));
+        return;
+      case "watched":
+        dispatch(removeFromWatched(movie.id));
+        return;
+      default:
+        return;
+    }
+  };
 
   return (
     <div key={movie.id} style={{ ...styles }}>
