@@ -61,7 +61,7 @@ const DisplayMovie = ({ movie, section }) => {
           Download
         </a>
       </div>
-      <CrossButton handleClick={() => console.log("clicked")} />
+      <CrossButton handleClick={handleCrossClick} />
     </div>
   );
 };
