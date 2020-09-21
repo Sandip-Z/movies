@@ -1,9 +1,21 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addInToWatch } from "../../redux/Movies/action";
 
 const DisplayResult = ({ results }) => {
+  const dispatch = useDispatch();
+
+  const handleClick = (result) => {
+    dispatch(addInToWatch(result));
+  };
+
   const renderResult = (results || []).map((result) => {
     return (
-      <li key={result.id} className="search-result__list--item">
+      <li
+        key={result.id}
+        className="search-result__list--item"
+        onClick={(e) => handleClick(result)}
+      >
         <div>
           <img src={result.small_cover_image} />
         </div>

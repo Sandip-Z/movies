@@ -6,6 +6,8 @@ const ToWatch = () => {
   const movies = useSelector((state) => state.MovieReducer.toWatch) || [];
   const dispatch = useDispatch();
 
+  console.log(movies);
+
   const renderData = movies.map((movie) => {
     return <p key={movie.id}>{movie.title}</p>;
   });
