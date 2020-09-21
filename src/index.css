@@ -139,3 +139,9 @@ nav {
   background-color: lightgray;
   cursor: pointer;
 }
+
+.display-movie-image {
+  width: 100px;
+  height: 120px;
+  /* margin: 10px 0; */
+}

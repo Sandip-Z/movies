@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import DisplayMovie from "./DisplayMovie";
 import EmptyList from "./EmptyList";
 
 const ToWatch = () => {
@@ -9,7 +10,8 @@ const ToWatch = () => {
   console.log(movies);
 
   const renderData = movies.map((movie) => {
-    return <p key={movie.id}>{movie.title}</p>;
+    console.log(movie);
+    return <DisplayMovie movie={movie} />;
   });
 
   return (
