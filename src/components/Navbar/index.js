@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import SearchBox from "../searchbox";
 const Navbar = () => {
   const [show, setShow] = useState(false);
   const handleCaretClick = () => {
@@ -10,6 +10,7 @@ const Navbar = () => {
       <div className="d-flex align-items-center">
         <p>Logo</p>
       </div>
+      <SearchBox />
       <div>
         <button className="btn btn-secondary">Log in</button>
         <button className="btn btn-primary">Open to contribution</button>

@@ -24,7 +24,10 @@ const SearchBox = () => {
 
   return (
     <div className="search-box">
-      <input onChange={(e) => handleInputChange(e.target.value)} />
+      <input
+        onChange={(e) => handleInputChange(e.target.value)}
+        placeholder="Search Yts.mx"
+      />
       <DisplayResult results={movies} />
     </div>
   );
