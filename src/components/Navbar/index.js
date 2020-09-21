@@ -12,7 +12,7 @@ const Navbar = () => {
       </div>
       <SearchBox />
       <div>
-        <button className="btn btn-secondary">Log in</button>
+        {/* <button className="btn btn-secondary">Log in</button> */}
         <button className="btn btn-primary">Open to contribution</button>
         <button
           className="btn btn-tertiary text-light"

@@ -1,11 +1,12 @@
 import React from "react";
+import Body from "./components/Body";
 import Navbar from "./components/Navbar";
-import SearchBox from "./components/searchbox";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
+      <Body />
     </div>
   );
 }
