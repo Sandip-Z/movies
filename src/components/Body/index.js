@@ -5,14 +5,14 @@ import Watching from "./Watching";
 
 const Body = () => {
   return (
-    <main className="d-flex justify-content-around bg-dark text-light">
-      <div className="to-watch">
+    <main className="row bg-dark text-light">
+      <div className="col-4">
         <ToWatch />
       </div>
-      <div className="watching">
+      <div className="col-4">
         <Watching />
       </div>
-      <div className="watched">
+      <div className="col-4">
         <Watched />
       </div>
     </main>
