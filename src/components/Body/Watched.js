@@ -1,15 +1,22 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import EmptyList from "./EmptyList";
+import { useSelector } from "react-redux";
 import { Droppable } from "react-beautiful-dnd";
 import SectionHeading from "./SectionHeading";
+import DisplayMovie from "./DisplayMovie";
 
 const Watched = () => {
-  const movies = useSelector((state) => state.MovieReducer.watched) || [];
-  const dispatch = useDispatch();
+  const movies =
+    useSelector((state) => state.MovieWatchedReducer.watched) || [];
 
-  const renderData = movies.map((movie) => {
-    return <p key={movie.id}>{movie.title}</p>;
+  const renderData = movies.map((movie, index) => {
+    return (
+      <DisplayMovie
+        movie={movie}
+        key={movie.id}
+        section="watched"
+        index={index}
+      />
+    );
   });
 
   return (

@@ -1,4 +1,8 @@
-import { ADD_IN_WATCHING, REMOVE_FROM_WATCHING } from "./action";
+import {
+  ADD_IN_WATCHING,
+  MIGRATE_TO_WATCHING,
+  REMOVE_FROM_WATCHING,
+} from "./action";
 
 const initialStore = {
   watching: [],
@@ -14,11 +18,17 @@ export default (state = initialStore, action) => {
       };
     case REMOVE_FROM_WATCHING:
       const filteredWatching = state.watching.filter(
-        (movie) => movie.id !== payload
+        (movie) => movie.id != payload
       );
       return {
         ...state,
         watching: [...filteredWatching],
+      };
+    case MIGRATE_TO_WATCHING:
+      const newWatching = [...state.watching, payload];
+      return {
+        ...state,
+        watching: newWatching,
       };
     default:
       return state;

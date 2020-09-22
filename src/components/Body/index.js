@@ -8,6 +8,9 @@ import {
   removeFromToWatch,
   removeFromWatched,
   removeFromWatching,
+  migrateToToWatch,
+  migrateToWatching,
+  migrateToWatched,
 } from "../../redux/Movies/action";
 
 const Body = () => {
@@ -72,13 +75,13 @@ const Body = () => {
     } else {
       switch (destinationId) {
         case "towatch":
-          // dispatch(migrateToToWatch(obj, destinationIndex))
+          dispatch(migrateToToWatch(obj, destinationIndex));
           break;
         case "watching":
-          // dispatch(migrateToWatching(obj, destinationIndex))
+          dispatch(migrateToWatching(obj, destinationIndex));
           break;
         case "watched":
-          // dispatch(migrateToWatched(obj, destinationIndex))
+          dispatch(migrateToWatched(obj, destinationIndex));
           break;
         default:
           break;

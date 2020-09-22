@@ -1,4 +1,8 @@
-import { ADD_IN_WATCHED, REMOVE_FROM_WATCHED } from "./action";
+import {
+  ADD_IN_WATCHED,
+  MIGRATE_TO_WATCHED,
+  REMOVE_FROM_WATCHED,
+} from "./action";
 
 const initialStore = {
   watched: [],
@@ -14,11 +18,18 @@ export default (state = initialStore, action) => {
       };
     case REMOVE_FROM_WATCHED:
       const filteredWatched = state.watched.filter(
-        (movie) => movie.id !== payload
+        (movie) => movie.id != payload
       );
       return {
         ...state,
         watched: [...filteredWatched],
+      };
+    case MIGRATE_TO_WATCHED:
+      const newWatched = [...state.watched, payload];
+      console.log(payload);
+      return {
+        ...state,
+        watched: newWatched,
       };
     default:
       return state;

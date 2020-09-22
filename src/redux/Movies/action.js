@@ -6,6 +6,9 @@ export const ADD_IN_WATCHED = "ADD_IN_WATCHED";
 export const REMOVE_FROM_TO_WATCH = "REMOVE_FROM_TO_WATCH";
 export const REMOVE_FROM_WATCHING = "REMOVE_FROM_WATCHING";
 export const REMOVE_FROM_WATCHED = "REMOVE_FROM_WATCHED";
+export const MIGRATE_TO_TO_WATCH = "MIGRATE_TO_TO_WATCH";
+export const MIGRATE_TO_WATCHING = "MIGRATE_TO_WATCHING";
+export const MIGRATE_TO_WATCHED = "MIGRATE_TO_WATCHED";
 
 export const updateSearchData = (payload) => {
   return {
@@ -59,5 +62,29 @@ export const removeFromWatched = (payload) => {
   return {
     type: REMOVE_FROM_WATCHED,
     payload,
+  };
+};
+
+export const migrateToToWatch = (payload, index) => {
+  return {
+    type: MIGRATE_TO_TO_WATCH,
+    payload,
+    index,
+  };
+};
+
+export const migrateToWatching = (payload, index) => {
+  return {
+    type: MIGRATE_TO_WATCHING,
+    payload,
+    index,
+  };
+};
+
+export const migrateToWatched = (payload, index) => {
+  return {
+    type: MIGRATE_TO_WATCHED,
+    payload,
+    index,
   };
 };

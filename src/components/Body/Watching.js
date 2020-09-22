@@ -6,7 +6,8 @@ import DisplayMovie from "./DisplayMovie";
 import SectionHeading from "./SectionHeading";
 
 const Watching = () => {
-  const movies = useSelector((state) => state.MovieReducer.watching) || [];
+  const movies =
+    useSelector((state) => state.MovieWatchingReducer.watching) || [];
   const dispatch = useDispatch();
 
   const renderData = movies.map((movie, index) => {

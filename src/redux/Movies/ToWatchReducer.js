@@ -1,4 +1,8 @@
-import { ADD_IN_TO_WATCH, REMOVE_FROM_TO_WATCH } from "./action";
+import {
+  ADD_IN_TO_WATCH,
+  MIGRATE_TO_TO_WATCH,
+  REMOVE_FROM_TO_WATCH,
+} from "./action";
 
 const initialStore = {
   toWatch: [
@@ -83,6 +87,12 @@ export default (state = initialStore, action) => {
       return {
         ...state,
         toWatch: [...filteredToWatch],
+      };
+    case MIGRATE_TO_TO_WATCH:
+      const newToWatch = [...state.toWatch, payload];
+      return {
+        ...state,
+        toWatch: newToWatch,
       };
     default:
       return state;
