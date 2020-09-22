@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Droppable } from "react-beautiful-dnd";
 import EmptyList from "./EmptyList";
 import DisplayMovie from "./DisplayMovie";
+import SectionHeading from "./SectionHeading";
 
 const Watching = () => {
   const movies = useSelector((state) => state.MovieReducer.watching) || [];
@@ -20,16 +21,19 @@ const Watching = () => {
   });
 
   return (
-    <Droppable droppableId="watching">
-      {(provided) => {
-        return (
-          <div ref={provided.innerRef} {...provided.droppableProps}>
-            {renderData}
-            {provided.placeholder}
-          </div>
-        );
-      }}
-    </Droppable>
+    <>
+      <SectionHeading title="Watching" />
+      <Droppable droppableId="watching">
+        {(provided) => {
+          return (
+            <div ref={provided.innerRef} {...provided.droppableProps}>
+              {renderData}
+              {provided.placeholder}
+            </div>
+          );
+        }}
+      </Droppable>
+    </>
   );
 };
 
