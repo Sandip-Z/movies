@@ -12,13 +12,51 @@ import {
 
 const Body = () => {
   const dispatch = useDispatch();
+
+  const toWatchMovies =
+    useSelector((state) => state.MovieToWatchReducer.toWatch) || [];
+  const watchingMovies =
+    useSelector((state) => state.MovieWatchingReducer.watching) || [];
+  const watchedMovies =
+    useSelector((state) => state.MovieWatchedReducer.watched) || [];
+
+  const getMovieFromReducer = (id, source) => {
+    let movie = {};
+    switch (source) {
+      case "towatch":
+        toWatchMovies.forEach((mov) => {
+          if (mov.id == id) {
+            movie = mov;
+          }
+        });
+        break;
+      case "watching":
+        watchingMovies.forEach((mov) => {
+          if (mov.id == id) {
+            movie = mov;
+          }
+        });
+        break;
+      case "watched":
+        watchedMovies.forEach((mov) => {
+          if (mov.id == id) {
+            movie = mov;
+          }
+        });
+        break;
+      default:
+        break;
+    }
+    return movie;
+  };
+
   const handleDragEnd = (dragged) => {
     const draggedId = dragged.draggableId;
     const sourceId = dragged.source.droppableId;
     const destinationId = dragged.destination?.droppableId;
     const destinationIndex = dragged.destination?.index;
-    const obj = {};
-
+    const obj = getMovieFromReducer(draggedId, sourceId);
+    console.log(obj);
     if (sourceId === destinationId) {
       switch (sourceId) {
         case "towatch":
