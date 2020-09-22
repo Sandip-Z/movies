@@ -16,7 +16,7 @@ const DisplayMovie = ({ movie, section }) => {
     // justifyContent: "space-around",
     margin: "auto",
     backgroundColor: "whitesmoke",
-    margin: "15px 10px",
+    margin: "15px 25px",
     borderRadius: "7px",
     paddingTop: "10px",
     paddingBottom: "10px",
