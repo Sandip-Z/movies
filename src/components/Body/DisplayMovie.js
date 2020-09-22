@@ -6,21 +6,11 @@ import {
   removeFromWatched,
   removeFromWatching,
 } from "../../redux/Movies/action";
+import { Draggable } from "react-beautiful-dnd";
 
-const DisplayMovie = ({ movie, section }) => {
+const DisplayMovie = ({ movie, section, index }) => {
   //   console.log(movie);
   const dispatch = useDispatch();
-
-  const styles = {
-    // display: "flex",
-    // justifyContent: "space-around",
-    margin: "auto",
-    backgroundColor: "whitesmoke",
-    margin: "15px 25px",
-    borderRadius: "7px",
-    paddingTop: "10px",
-    paddingBottom: "10px",
-  };
 
   const renderGenres = movie.genres.map((genre) => {
     return <code key={genre}>{genre}</code>;
@@ -43,28 +33,43 @@ const DisplayMovie = ({ movie, section }) => {
   };
 
   return (
-    <div key={movie.id} style={{ ...styles }} className="row">
-      <div className="col-lg-4">
-        <img src={movie.medium_cover_image} className="display-movie-image" />
-      </div>
-      <div className="col-lg-7 d-flex flex-column">
-        <h5 className="text-dark mb-0">
-          {movie.title}
-          <span className="mx-2">{movie.rating}</span>
-        </h5>
-        <p>{renderGenres}</p>
-        <a
-          href={`${movie.torrents[1].url}`}
-          target="_blank"
-          className="mt-auto mb-2"
-        >
-          Download
-        </a>
-      </div>
-      <div className="col-lg-1 d-flex justify-content-center align-items-start">
-        <CrossButton handleClick={handleCrossClick} />
-      </div>
-    </div>
+    <Draggable draggableId={movie.id.toString()} index={index}>
+      {(provided) => {
+        return (
+          <div
+            key={movie.id}
+            className="row draggable-box"
+            {...provided.dragHandleProps}
+            {...provided.draggableProps}
+            ref={provided.innerRef}
+          >
+            <div className="col-lg-4">
+              <img
+                src={movie.medium_cover_image}
+                className="display-movie-image"
+              />
+            </div>
+            <div className="col-lg-6 d-flex flex-column">
+              <h5 className="text-dark mb-0">
+                {movie.title}
+                <span className="mx-2">{movie.rating}</span>
+              </h5>
+              <p>{renderGenres}</p>
+              <a
+                href={`${movie.torrents[1].url}`}
+                target="_blank"
+                className="mt-auto mb-2"
+              >
+                Download
+              </a>
+            </div>
+            <div className="col-lg-2 d-flex justify-content-center align-items-start">
+              <CrossButton handleClick={handleCrossClick} />
+            </div>
+          </div>
+        );
+      }}
+    </Draggable>
   );
 };
 

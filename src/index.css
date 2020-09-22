@@ -55,8 +55,10 @@ p {
 
 .search-box input {
   width: 500px;
-  height: 25px;
+  /* height: 25px; */
   padding: 5px 15px;
+  border: 0px;
+  border-radius: 2px;
 }
 
 .search-result {
@@ -165,4 +167,13 @@ nav {
   color: whitesmoke;
   cursor: pointer;
   transition: all 0.5s;
+}
+
+.draggable-box {
+  margin: auto;
+  background-color: whitesmoke;
+  margin: 15px 25px;
+  border-radius: 7px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
