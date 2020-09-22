@@ -26,6 +26,10 @@ p {
   position: relative;
 }
 
+.search-result {
+  z-index: 100;
+}
+
 .search-result__list {
   list-style-type: none;
   padding: 0;
