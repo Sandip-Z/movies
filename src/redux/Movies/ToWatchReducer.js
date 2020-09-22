@@ -78,7 +78,7 @@ export default (state = initialStore, action) => {
       };
     case REMOVE_FROM_TO_WATCH:
       const filteredToWatch = state.toWatch.filter(
-        (movie) => movie.id !== payload
+        (movie) => movie.id != payload
       );
       return {
         ...state,
