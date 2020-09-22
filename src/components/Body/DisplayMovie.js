@@ -12,8 +12,8 @@ const DisplayMovie = ({ movie, section }) => {
   const dispatch = useDispatch();
 
   const styles = {
-    display: "flex",
-    justifyContent: "space-around",
+    // display: "flex",
+    // justifyContent: "space-around",
     margin: "auto",
     backgroundColor: "whitesmoke",
     margin: "15px 10px",
@@ -43,11 +43,11 @@ const DisplayMovie = ({ movie, section }) => {
   };
 
   return (
-    <div key={movie.id} style={{ ...styles }}>
-      <div>
+    <div key={movie.id} style={{ ...styles }} className="row">
+      <div className="col-lg-4">
         <img src={movie.medium_cover_image} className="display-movie-image" />
       </div>
-      <div className="d-flex flex-column">
+      <div className="col-lg-7 d-flex flex-column">
         <h5 className="text-dark mb-0">
           {movie.title}
           <span className="mx-2">{movie.rating}</span>
@@ -61,7 +61,9 @@ const DisplayMovie = ({ movie, section }) => {
           Download
         </a>
       </div>
-      <CrossButton handleClick={handleCrossClick} />
+      <div className="col-lg-1 d-flex justify-content-center align-items-start">
+        <CrossButton handleClick={handleCrossClick} />
+      </div>
     </div>
   );
 };

@@ -18,8 +18,8 @@ code {
 }
 
 p {
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .search-box {
@@ -148,12 +148,17 @@ nav {
 
 .cross-button {
   background-color: rgb(180, 179, 179);
-  padding: 3px 10px;
-  font-weight: bold;
+  padding: 0 9px !important;
+  /* font-weight: bold; */
   border-radius: 50%;
+  color: black;
+  transition: all 0.5s;
+  padding-bottom: 4px !important;
 }
 
 .cross-button:hover {
-  background-color: tomato;
+  background-color: rgb(247, 39, 39);
+  color: whitesmoke;
   cursor: pointer;
+  transition: all 0.5s;
 }
