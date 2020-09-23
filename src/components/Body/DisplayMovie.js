@@ -56,7 +56,11 @@ const DisplayMovie = ({ movie, section, index }) => {
               </h5>
               <p>{renderGenres}</p>
               <a
-                href={`${movie.torrents[1].url}`}
+                href={`${
+                  movie?.torrents[1]?.url
+                    ? movie?.torrents[1]?.url
+                    : movie?.torrents[0]?.url
+                }`}
                 target="_blank"
                 className="mt-auto mb-2"
               >
