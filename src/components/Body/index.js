@@ -25,27 +25,24 @@ const Body = () => {
 
   const getMovieFromReducer = (id, source) => {
     let movie = {};
+    const grabMovieFromSource = (arr) => {
+      let selected = {};
+      arr.forEach((mov) => {
+        if (mov.id == id) {
+          selected = mov;
+        }
+      });
+      return selected;
+    };
     switch (source) {
       case "towatch":
-        toWatchMovies.forEach((mov) => {
-          if (mov.id == id) {
-            movie = mov;
-          }
-        });
+        movie = grabMovieFromSource(toWatchMovies);
         break;
       case "watching":
-        watchingMovies.forEach((mov) => {
-          if (mov.id == id) {
-            movie = mov;
-          }
-        });
+        movie = grabMovieFromSource(watchingMovies);
         break;
       case "watched":
-        watchedMovies.forEach((mov) => {
-          if (mov.id == id) {
-            movie = mov;
-          }
-        });
+        movie = grabMovieFromSource(watchedMovies);
         break;
       default:
         break;
@@ -106,13 +103,13 @@ const Body = () => {
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
       <main className="row bg-dark text-light">
-        <div className="col-4">
+        <div className="col-lg-4 p-3 border">
           <ToWatch />
         </div>
-        <div className="col-4">
+        <div className="col-lg-4 p-3 border">
           <Watching />
         </div>
-        <div className="col-4">
+        <div className="col-lg-4 p-3 border">
           <Watched />
         </div>
       </main>
