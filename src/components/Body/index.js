@@ -85,7 +85,7 @@ const Body = () => {
       }
     }
 
-    if (dragged.destination) {
+    if (sourceId !== destinationId && destinationId) {
       switch (sourceId) {
         case "towatch":
           dispatch(removeFromToWatch(draggedId));

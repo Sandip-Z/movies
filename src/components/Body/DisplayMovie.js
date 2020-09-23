@@ -38,7 +38,7 @@ const DisplayMovie = ({ movie, section, index }) => {
         return (
           <div
             key={movie.id}
-            className="row draggable-box"
+            className="row draggable-box m-4"
             {...provided.dragHandleProps}
             {...provided.draggableProps}
             ref={provided.innerRef}
