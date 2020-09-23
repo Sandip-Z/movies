@@ -1,7 +1,7 @@
 import React from "react";
 
 const SectionHeading = ({ title }) => {
-  return <p>{title}</p>;
+  return <p className="section-heading">{title}</p>;
 };
 
 export default SectionHeading;

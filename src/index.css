@@ -182,8 +182,14 @@ nav {
 .droppable-zone {
   /* border: 2px dotted rgb(80, 80, 80); */
   margin: 5px;
-  height: 100vh;
+  min-height: 75px;
   overflow-y: auto;
   background-color: #ecf0f1;
   border-radius: 2px;
+}
+
+.section-heading {
+  text-align: start;
+  color: rgb(73, 72, 72);
+  padding: 10px !important;
 }

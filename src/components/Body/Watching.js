@@ -23,7 +23,6 @@ const Watching = () => {
 
   return (
     <>
-      <SectionHeading title="Watching" />
       <Droppable droppableId="watching">
         {(provided) => {
           return (
@@ -32,6 +31,7 @@ const Watching = () => {
               {...provided.droppableProps}
               className="droppable-zone"
             >
+              <SectionHeading title="Watching" />
               {renderData}
               {provided.placeholder}
             </div>
