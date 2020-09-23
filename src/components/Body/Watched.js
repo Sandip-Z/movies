@@ -24,7 +24,11 @@ const Watched = () => {
       <SectionHeading title="Watched" />
       <Droppable droppableId="watched">
         {(provided) => (
-          <div ref={provided.innerRef} {...provided.droppableProps}>
+          <div
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+            className="droppable-zone"
+          >
             {renderData}
             {provided.placeholder}
           </div>

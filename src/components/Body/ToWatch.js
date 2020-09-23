@@ -29,7 +29,11 @@ const ToWatch = () => {
       <Droppable droppableId="towatch">
         {(provided) => {
           return (
-            <div ref={provided.innerRef} {...provided.droppableProps}>
+            <div
+              ref={provided.innerRef}
+              {...provided.droppableProps}
+              className="droppable-zone"
+            >
               {renderData}
               {provided.placeholder}
             </div>

@@ -27,7 +27,11 @@ const Watching = () => {
       <Droppable droppableId="watching">
         {(provided) => {
           return (
-            <div ref={provided.innerRef} {...provided.droppableProps}>
+            <div
+              ref={provided.innerRef}
+              {...provided.droppableProps}
+              className="droppable-zone"
+            >
               {renderData}
               {provided.placeholder}
             </div>

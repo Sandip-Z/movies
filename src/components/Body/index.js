@@ -103,13 +103,13 @@ const Body = () => {
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
       <main className="row bg-dark text-light">
-        <div className="col-lg-4 p-3 border">
+        <div className="col-lg-4 p-3">
           <ToWatch />
         </div>
-        <div className="col-lg-4 p-3 border">
+        <div className="col-lg-4 p-3">
           <Watching />
         </div>
-        <div className="col-lg-4 p-3 border">
+        <div className="col-lg-4 p-3">
           <Watched />
         </div>
       </main>

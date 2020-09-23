@@ -171,9 +171,19 @@ nav {
 
 .draggable-box {
   margin: auto;
-  background-color: whitesmoke;
+  background-color: #bdc3c7;
   margin: 15px 25px;
   border-radius: 7px;
   padding-top: 10px;
   padding-bottom: 10px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+.droppable-zone {
+  /* border: 2px dotted rgb(80, 80, 80); */
+  margin: 5px;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #ecf0f1;
+  border-radius: 2px;
 }
