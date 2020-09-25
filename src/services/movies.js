@@ -2,7 +2,7 @@ import axios from "axios";
 import { moviesByName } from "../constants/endpoints";
 import { updateSearchData } from "../redux/Movies/action";
 
-export const getAllMovieByName = (param) => {
+export const getAllMovieByName = (param, loading) => {
   return (dispatch) => {
     const url = `${moviesByName}?query_term=${param}`;
     return axios
@@ -13,6 +13,11 @@ export const getAllMovieByName = (param) => {
           dispatch(updateSearchData(response.data.data.movies));
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(() => {
+        if (typeof loading === "function") {
+          loading();
+        }
+      });
   };
 };

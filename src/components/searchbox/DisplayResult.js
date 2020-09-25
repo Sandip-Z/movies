@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { addInToWatch } from "../../redux/Movies/action";
 
-const DisplayResult = ({ results }) => {
+const DisplayResult = ({ results, focus, loading }) => {
   const dispatch = useDispatch();
 
   const handleClick = (result) => {
@@ -32,10 +32,12 @@ const DisplayResult = ({ results }) => {
 
   return (
     <>
-      {results.length ? (
+      {focus && renderResult.length ? (
         <div className="search-result">
           <ul className="search-result__list">{renderResult}</ul>
         </div>
+      ) : loading ? (
+        <div>Searching</div>
       ) : (
         <></>
       )}
