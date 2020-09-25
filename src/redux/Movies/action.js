@@ -9,6 +9,9 @@ export const REMOVE_FROM_WATCHED = "REMOVE_FROM_WATCHED";
 export const MIGRATE_TO_TO_WATCH = "MIGRATE_TO_TO_WATCH";
 export const MIGRATE_TO_WATCHING = "MIGRATE_TO_WATCHING";
 export const MIGRATE_TO_WATCHED = "MIGRATE_TO_WATCHED";
+export const REARRANGE_IN_TO_WATCH = "REARRANGE_IN_TO_WATCH";
+export const REARRANGE_IN_WATCHING = "REARRANGE_IN_WATCHING";
+export const REARRANGE_IN_WATCHED = "REARRANGE_IN_WATCHED";
 
 export const updateSearchData = (payload) => {
   return {
@@ -86,5 +89,29 @@ export const migrateToWatched = (payload, index) => {
     type: MIGRATE_TO_WATCHED,
     payload,
     index,
+  };
+};
+
+export const rearrangeInToWatch = (source, destination) => {
+  return {
+    type: REARRANGE_IN_TO_WATCH,
+    source,
+    destination,
+  };
+};
+
+export const rearrangeInWatching = (source, destination) => {
+  return {
+    type: REARRANGE_IN_WATCHING,
+    source,
+    destination,
+  };
+};
+
+export const rearrangeInWatched = (source, destination) => {
+  return {
+    type: REARRANGE_IN_WATCHED,
+    source,
+    destination,
   };
 };
