@@ -161,6 +161,7 @@ nav {
   color: black;
   transition: all 0.5s;
   padding-bottom: 4px !important;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 .cross-button:hover {
@@ -178,6 +179,12 @@ nav {
   padding-top: 10px;
   padding-bottom: 10px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+.draggable-box:hover {
+  background-color: #c7cdd1;
+  transition: all 0.3s;
 }
 
 .droppable-zone {
@@ -192,6 +199,6 @@ nav {
 
 .section-heading {
   text-align: start;
-  color: rgb(73, 72, 72);
-  padding: 10px !important;
+  color: rgb(179, 171, 171);
+  padding: 20px 25px 0px 25px !important;
 }
