@@ -1,8 +1,11 @@
 import {
   ADD_IN_WATCHING,
   MIGRATE_TO_WATCHING,
+  REARRANGE_IN_WATCHING,
   REMOVE_FROM_WATCHING,
 } from "./action";
+
+import { rearrange } from "../../utils/arrays";
 
 const initialStore = {
   watching: [],
@@ -26,9 +29,25 @@ export default (state = initialStore, action) => {
       };
     case MIGRATE_TO_WATCHING:
       const newWatching = [...state.watching, payload];
+      const sourceIndex = state.watching.length;
+      const rearrangedForMigrate = rearrange(
+        newWatching,
+        sourceIndex,
+        action.index
+      );
       return {
         ...state,
-        watching: newWatching,
+        watching: rearrangedForMigrate,
+      };
+    case REARRANGE_IN_WATCHING:
+      const rearranged = rearrange(
+        state.watching,
+        action.source,
+        action.destination
+      );
+      return {
+        ...state,
+        watching: rearranged,
       };
     default:
       return state;

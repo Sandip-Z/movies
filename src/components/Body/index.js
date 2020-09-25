@@ -11,6 +11,9 @@ import {
   migrateToToWatch,
   migrateToWatching,
   migrateToWatched,
+  rearrangeInToWatch,
+  rearrangeInWatched,
+  rearrangeInWatching,
 } from "../../redux/Movies/action";
 
 const Body = () => {
@@ -55,18 +58,19 @@ const Body = () => {
     const sourceId = dragged.source.droppableId;
     const destinationId = dragged.destination?.droppableId;
     const destinationIndex = dragged.destination?.index;
+    const sourceIndex = dragged.source?.index;
     const obj = getMovieFromReducer(draggedId, sourceId);
     console.log(obj);
     if (sourceId === destinationId) {
       switch (sourceId) {
         case "towatch":
-          // dispatch(rearrangeInToWatch(draggedId, dragged.destination.index))
+          dispatch(rearrangeInToWatch(sourceIndex, destinationIndex));
           break;
         case "watching":
-          // dispatch(rearrangeInWatching(draggedId, dragged.destination.index))
+          dispatch(rearrangeInWatching(sourceIndex, destinationIndex));
           break;
         case "watched":
-          // dispatch(rearrangeInWatched(draggedId, dragged.destination.index))
+          dispatch(rearrangeInWatched(sourceIndex, destinationIndex));
           break;
       }
     } else {

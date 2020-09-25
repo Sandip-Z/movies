@@ -1,8 +1,11 @@
 import {
   ADD_IN_WATCHED,
   MIGRATE_TO_WATCHED,
+  REARRANGE_IN_WATCHED,
   REMOVE_FROM_WATCHED,
 } from "./action";
+
+import { rearrange } from "../../utils/arrays";
 
 const initialStore = {
   watched: [],
@@ -26,10 +29,25 @@ export default (state = initialStore, action) => {
       };
     case MIGRATE_TO_WATCHED:
       const newWatched = [...state.watched, payload];
-      console.log(payload);
+      const sourceIndex = state.watched.length;
+      const rearrangedForWatched = rearrange(
+        newWatched,
+        sourceIndex,
+        action.index
+      );
       return {
         ...state,
-        watched: newWatched,
+        watched: rearrangedForWatched,
+      };
+    case REARRANGE_IN_WATCHED:
+      const rearranged = rearrange(
+        state.watched,
+        action.source,
+        action.destination
+      );
+      return {
+        ...state,
+        watched: rearranged,
       };
     default:
       return state;
