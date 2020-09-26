@@ -68,8 +68,9 @@ p {
   width: 500px;
   /* border: 1px solid red; */
   background-color: lightgrey;
-  height: 450px;
+  max-height: 450px;
   overflow-y: auto;
+  padding: 15px;
 }
 
 .bg-dark {

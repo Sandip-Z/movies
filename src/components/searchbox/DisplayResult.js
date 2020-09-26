@@ -20,11 +20,12 @@ const DisplayResult = ({ results, focus, loading }) => {
           <img src={result.small_cover_image} />
         </div>
         <div className="search-result__list--item-detail">
-          <h3>
+          <h5>
             {result.title}{" "}
             <code className="bg-dark text-light">{result.rating}</code>
-          </h3>
-          <p className="">{result.synopsis}</p>
+          </h5>
+          <small>{result.genres[0]}</small>
+          {/* <p className="">{result.synopsis}</p> */}
         </div>
       </li>
     );
@@ -37,7 +38,7 @@ const DisplayResult = ({ results, focus, loading }) => {
           <ul className="search-result__list">{renderResult}</ul>
         </div>
       ) : loading ? (
-        <div>Searching</div>
+        <div className="search-result">Searching</div>
       ) : (
         <></>
       )}
