@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import useClickListener from "../../hooks/useClickListener";
 import { useDispatch, useSelector } from "react-redux";
 import { clearSearchData } from "../../redux/Movies/action";
 import { getAllMovieByName } from "../../services/movies";
@@ -7,7 +8,7 @@ import DisplayResult from "./DisplayResult";
 
 const SearchBox = () => {
   const [param, setParam] = useState("");
-  const [focus, setFocus] = useState(false);
+  const [focus] = useClickListener("search-box");
   const [loading, setLoading] = useState(false);
   const movies = useSelector((state) => state.MovieReducer.searchData) || [];
   const dispatch = useDispatch();
@@ -15,16 +16,6 @@ const SearchBox = () => {
   const handleInputChange = debounce((value) => {
     setParam(value);
   }, 500);
-
-  const handleOnFocus = (e) => {
-    console.log(e);
-    setFocus(true);
-  };
-
-  const handleOnBlur = (e) => {
-    console.log(e);
-    setFocus(false);
-  };
 
   useEffect(() => {
     if (param !== "") {
@@ -36,7 +27,7 @@ const SearchBox = () => {
   }, [param]);
 
   return (
-    <div className="search-box" onFocus={handleOnFocus} onBlur={handleOnBlur}>
+    <div className="search-box" id="search-box">
       <input
         onChange={(e) => handleInputChange(e.target.value)}
         placeholder="Search Yts.mx"
