@@ -131,10 +131,11 @@ nav {
 }
 
 .dropdown {
-  position: absolute;
+  position: absolute !important;
+  z-index: 100;
   background-color: rgb(197, 197, 197);
   top: 55px;
-  right: 284px;
+  right: 70px;
   list-style: none;
 }
 
