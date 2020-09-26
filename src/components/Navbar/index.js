@@ -2,7 +2,7 @@ import React from "react";
 import useClickListener from "../../hooks/useClickListener";
 import SearchBox from "../searchbox";
 const Navbar = () => {
-  const [show, setShow] = useClickListener("nav-dropdown");
+  const [show, setShow] = useClickListener("nav-dropdown", true);
 
   const handleClickSetting = (e) => {
     console.log("clicked on setting");
@@ -24,12 +24,7 @@ const Navbar = () => {
         {/* <button className="btn btn-secondary">Log in</button> */}
         <button className="btn btn-primary">Open to contribution</button>
         <div id="nav-dropdown" key="nav-dropdown" className="d-flex">
-          <button
-            className="btn btn-tertiary text-light"
-            // onClick={handleCaretClick}
-          >
-            &#9660;
-          </button>
+          <button className="btn btn-tertiary text-light">&#9660;</button>
           {show && (
             <ul className="dropdown">
               <li name="setting" onClick={handleClickSetting}>
