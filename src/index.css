@@ -9,7 +9,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #2c3e50 !important;
+  /* background-color: #2c3e50 !important; */
+  background-color: #e5e8ea !important;
 }
 
 code {
@@ -84,6 +85,7 @@ p {
 nav {
   background-color: teal;
   padding: 12px;
+  box-shadow: 1px 1px 15px rgb(0, 0, 0, 0.2);
 }
 
 .d-flex {
@@ -195,12 +197,13 @@ nav {
   min-height: 75px;
   max-height: 700px;
   overflow-y: auto;
-  background-color: #ecf0f1;
+  background-color: #3c5f68;
   border-radius: 2px;
+  box-shadow: 8px 16px 50px rgba(40, 37, 37, 0.5) !important;
 }
 
 .section-heading {
   text-align: start;
-  color: rgb(179, 171, 171);
+  /* color: rgb(179, 171, 171); */
   padding: 20px 25px 0px 25px !important;
 }
