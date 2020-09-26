@@ -2,15 +2,25 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import LoginPage from "./pages/LoginPage";
+import ApplicationPage from "./pages/ApplicationPage";
+import UnlistedPage from "./pages/UnlistedPage";
 import Store from "./redux/store";
 import { Provider } from "react-redux";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap-css-only";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={Store}>
-      <App />
+      <Router>
+        <Switch>
+          <Route path="/" exact component={App} />
+          <Route path="/login" exact component={LoginPage} />
+          <Route exact component={UnlistedPage} />
+        </Switch>
+      </Router>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
