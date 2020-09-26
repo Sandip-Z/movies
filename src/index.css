@@ -207,3 +207,20 @@ nav {
   /* color: rgb(179, 171, 171); */
   padding: 20px 25px 0px 25px !important;
 }
+
+.login {
+  background-color: whitesmoke;
+  padding: 50px;
+}
+
+form.login-form section {
+  display: flex;
+  flex-direction: column;
+  /* border: 2px dotted blue; */
+  margin: 25px;
+}
+
+form.login-form section input {
+  padding: 7px 15px;
+  border: 1px solid grey;
+}
