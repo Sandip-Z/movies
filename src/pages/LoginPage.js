@@ -7,7 +7,7 @@ const LoginPage = () => {
       <div className="row">
         <div className="col-lg-6 login-image-wrapper">
           <h5 className="my-3">KEEP TRACK OF MOVIES YOU WATCH</h5>
-          <h4 className="my-3">CLONE YOUR FRIENDS TO WATCH LIST</h4>
+          <h4 className="my-3">CLONE YOUR FRIENDS WATCH LIST</h4>
           <h3 className="my-3">ARCHIEVE YOUR WATCHED LIST</h3>
           <h2 className="my-3">OFCOURSE ITS FUN!!</h2>
         </div>
