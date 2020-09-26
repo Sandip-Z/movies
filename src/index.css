@@ -211,16 +211,37 @@ nav {
 .login {
   background-color: whitesmoke;
   padding: 50px;
+  margin: 50px;
+}
+
+form.login-form {
+  /* border: 2px dotted blue; */
 }
 
 form.login-form section {
   display: flex;
   flex-direction: column;
-  /* border: 2px dotted blue; */
   margin: 25px;
 }
 
 form.login-form section input {
   padding: 7px 15px;
   border: 1px solid grey;
+  border-radius: 25px;
+}
+
+.login-image-wrapper {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.5),
+      rgba(58, 58, 58, 0.493)
+    ),
+    url("../src/assets/login.svg");
+  color: rgb(228, 216, 216);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2%;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.2);
 }
