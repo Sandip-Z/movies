@@ -4,18 +4,23 @@ import SearchBox from "../searchbox";
 const Navbar = () => {
   const [show, setShow] = useClickListener("nav-dropdown", true);
 
-  const handleClickSetting = (e) => {
+  const handleClickSetting = (_) => {
     console.log("clicked on setting");
     setShow(false);
   };
 
-  const handleLogOut = (e) => {
+  const handleLogOut = (_) => {
     console.log("clicked on logout");
     setShow(false);
   };
 
+  const toggleSideNavigation = (_) => {
+    console.log("dispatch side navigation");
+  };
+
   return (
     <nav className="d-flex justify-content-around">
+      <button onClick={toggleSideNavigation}>open</button>
       <div className="d-flex align-items-center">
         <p>Logo</p>
       </div>
