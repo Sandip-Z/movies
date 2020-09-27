@@ -33,7 +33,7 @@ const ToWatch = () => {
               {...provided.droppableProps}
               className="droppable-zone"
             >
-              <SectionHeading title="To watch" />
+              <SectionHeading title="Watch List" />
               {renderData}
               {provided.placeholder}
             </div>
