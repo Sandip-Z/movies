@@ -5,12 +5,14 @@ import MovieReducer from "./Movies/reducer";
 import MovieToWatchReducer from "./Movies/ToWatchReducer";
 import MovieWatchingReducer from "./Movies/WatchingReducer";
 import MovieWatchedReducer from "./Movies/WatchedReducer";
+import ApplicationReducer from "./Application/reducer";
 const rootReducer = combineReducers({
   UserReducer,
   MovieReducer,
   MovieToWatchReducer,
   MovieWatchingReducer,
   MovieWatchedReducer,
+  ApplicationReducer,
 });
 
 const composeEnhancer =

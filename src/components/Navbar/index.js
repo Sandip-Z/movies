@@ -1,8 +1,11 @@
 import React from "react";
 import useClickListener from "../../hooks/useClickListener";
 import SearchBox from "../searchbox";
+import { useDispatch } from "react-redux";
+import { toggleSidebarNav } from "../../redux/Application/action";
 const Navbar = () => {
   const [show, setShow] = useClickListener("nav-dropdown", true);
+  const dispatch = useDispatch();
 
   const handleClickSetting = (_) => {
     console.log("clicked on setting");
@@ -16,6 +19,7 @@ const Navbar = () => {
 
   const toggleSideNavigation = (_) => {
     console.log("dispatch side navigation");
+    dispatch(toggleSidebarNav());
   };
 
   return (
