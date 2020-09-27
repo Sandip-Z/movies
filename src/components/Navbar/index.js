@@ -1,11 +1,14 @@
 import React from "react";
 import useClickListener from "../../hooks/useClickListener";
 import SearchBox from "../searchbox";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleSidebarNav } from "../../redux/Application/action";
 const Navbar = () => {
   const [show, setShow] = useClickListener("nav-dropdown", true);
   const dispatch = useDispatch();
+  const hideSidebar = useSelector(
+    (state) => state.ApplicationReducer.sideNavbarOpen
+  );
 
   const handleClickSetting = (_) => {
     console.log("clicked on setting");
@@ -24,7 +27,9 @@ const Navbar = () => {
 
   return (
     <nav className="d-flex justify-content-around">
-      <button onClick={toggleSideNavigation}>open</button>
+      <button onClick={toggleSideNavigation}>
+        {hideSidebar ? "close" : "open"}
+      </button>
       <div className="d-flex align-items-center">
         <p>Logo</p>
       </div>
