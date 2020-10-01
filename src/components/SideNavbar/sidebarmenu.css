@@ -1,0 +1,30 @@
+.side-navbar {
+  background-color: red;
+  position: fixed;
+  top: 62px;
+  background: white;
+  max-width: 250px;
+  width: 250px;
+  height: 100vh;
+  z-index: 1000;
+}
+
+.side-navbar__menu {
+  /* background-color: thistle; */
+}
+
+.sidebar-navbar__menu--list {
+  border-bottom: 1px solid black;
+}
+
+.sidebar-navbar__menu--list li {
+  padding: 15px;
+}
+
+.sidebar-navbar__menu--list li:hover {
+  background-color: teal;
+}
+
+.sidebar-navbar__menu--list li.no-item:hover {
+  background-color: inherit;
+}

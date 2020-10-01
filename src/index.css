@@ -256,13 +256,8 @@ form.login-form section input {
   box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.side-navbar {
-  position: fixed;
-  top: 62px;
-  background: white;
-  padding: 10px;
-  max-width: 250px;
-  width: 250px;
-  height: 100vh;
-  z-index: 1000;
+.sidebar-toggler-button {
+  background-color: transparent;
+  border: 0px;
+  font-size: 22px;
 }

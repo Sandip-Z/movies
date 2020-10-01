@@ -3,6 +3,7 @@ import useClickListener from "../../hooks/useClickListener";
 import SearchBox from "../searchbox";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleSidebarNav } from "../../redux/Application/action";
+import { BsXSquareFill, BsList } from "react-icons/bs";
 const Navbar = () => {
   const [show, setShow] = useClickListener("nav-dropdown", true);
   const dispatch = useDispatch();
@@ -27,8 +28,8 @@ const Navbar = () => {
 
   return (
     <nav className="d-flex justify-content-around">
-      <button onClick={toggleSideNavigation}>
-        {hideSidebar ? "close" : "open"}
+      <button className="sidebar-toggler-button" onClick={toggleSideNavigation}>
+        {hideSidebar ? <BsXSquareFill /> : <BsList />}
       </button>
       <div className="d-flex align-items-center">
         <p>Logo</p>

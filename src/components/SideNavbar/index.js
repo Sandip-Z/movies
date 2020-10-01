@@ -1,5 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import SidebarMenu from "./SidebarMenu";
+import "./sidebarmenu.css";
 
 const SideNavbar = () => {
   const dispatch = useDispatch();
@@ -9,7 +11,9 @@ const SideNavbar = () => {
   return (
     <>
       {showSidebar ? (
-        <div className="side-navbar">This is side nav bar</div>
+        <div className="side-navbar">
+          <SidebarMenu />
+        </div>
       ) : (
         <></>
       )}

@@ -1,7 +1,7 @@
 import { TOGGLE_SIDEBAR_NAV } from "./action";
 
 const initialStore = {
-  sideNavbarOpen: false,
+  sideNavbarOpen: true,
 };
 
 export default (state = initialStore, action) => {
