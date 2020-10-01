@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import LoginPage from "./pages/LoginPage";
 import ApplicationPage from "./pages/ApplicationPage";
+import DashboardPage from "./pages/DashboardPage";
 import UnlistedPage from "./pages/UnlistedPage";
 import Store from "./redux/store";
 import { Provider } from "react-redux";
@@ -19,6 +20,7 @@ ReactDOM.render(
         <Switch>
           <Route path="/" exact component={App} />
           <Route path="/login" exact component={LoginPage} />
+          <Route path="/dashboard" exact component={DashboardPage} />
           <Route exact component={UnlistedPage} />
         </Switch>
       </Router>
