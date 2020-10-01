@@ -10,6 +10,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap-css-only";
+import "typeface-roboto";
 
 ReactDOM.render(
   <React.StrictMode>
