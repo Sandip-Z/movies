@@ -1,28 +1,28 @@
 import React from "react";
-import useClickListener from "../../hooks/useClickListener";
+// import useClickListener from "../../hooks/useClickListener";
 import SearchBox from "../searchbox";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleSidebarNav } from "../../redux/Application/action";
 import { BsXSquareFill, BsList } from "react-icons/bs";
 const Navbar = () => {
-  const [show, setShow] = useClickListener("nav-dropdown", true);
+  // const [show, setShow] = useClickListener("nav-dropdown", true);
   const dispatch = useDispatch();
   const hideSidebar = useSelector(
     (state) => state.ApplicationReducer.sideNavbarOpen
   );
 
-  const handleClickSetting = (_) => {
-    console.log("clicked on setting");
-    setShow(false);
-  };
+  // const handleClickSetting = (_) => {
+  //   console.log("clicked on setting");
+  //   setShow(false);
+  // };
 
-  const handleLogOut = (_) => {
-    console.log("clicked on logout");
-    setShow(false);
-  };
+  // const handleLogOut = (_) => {
+  //   console.log("clicked on logout");
+  //   setShow(false);
+  // };
 
   const toggleSideNavigation = (_) => {
-    console.log("dispatch side navigation");
+    // console.log("dispatch side navigation");
     dispatch(toggleSidebarNav());
   };
 
@@ -38,7 +38,7 @@ const Navbar = () => {
       <div className="d-flex">
         {/* <button className="btn btn-secondary">Log in</button> */}
         <button className="btn btn-primary">Open to contribution</button>
-        <div id="nav-dropdown" key="nav-dropdown" className="d-flex">
+        {/* <div id="nav-dropdown" key="nav-dropdown" className="d-flex">
           <button className="btn btn-tertiary text-light">&#9660;</button>
           {show && (
             <ul className="dropdown">
@@ -50,7 +50,7 @@ const Navbar = () => {
               </li>
             </ul>
           )}
-        </div>
+        </div> */}
       </div>
     </nav>
   );
