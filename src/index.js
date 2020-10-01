@@ -5,13 +5,17 @@ import App from "./App";
 import LoginPage from "./pages/LoginPage";
 import ApplicationPage from "./pages/ApplicationPage";
 import DashboardPage from "./pages/DashboardPage";
+import CurrentMarathonPage from "./pages/CurrentMarathonPage";
+import ProfilePage from "./pages/ProfilePage";
 import UnlistedPage from "./pages/UnlistedPage";
 import Store from "./redux/store";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import PublicRoute from "./components/Routes/PublicRoute";
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap-css-only";
 import "typeface-roboto";
+import PrivateRoute from "./components/Routes/PrivateRoute";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,8 +23,13 @@ ReactDOM.render(
       <Router>
         <Switch>
           <Route path="/" exact component={App} />
-          <Route path="/login" exact component={LoginPage} />
-          <Route path="/dashboard" exact component={DashboardPage} />
+          <PublicRoute path="/login" component={LoginPage} />
+          <PrivateRoute
+            path="/current-marathon"
+            component={CurrentMarathonPage}
+          />
+          <PrivateRoute path="/dashboard" component={DashboardPage} />
+          <PrivateRoute path="/profile" component={ProfilePage} />
           <Route exact component={UnlistedPage} />
         </Switch>
       </Router>
