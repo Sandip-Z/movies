@@ -6,13 +6,17 @@ import { RiRunFill, RiProfileFill } from "react-icons/ri";
 
 const userInformation = [
   { name: "Profile", icon: <RiProfileFill />, href: "/profile" },
-  { name: "Logout", icon: <AiOutlineLogout />, href: "/logout" },
+  // { name: "Logout", icon: <AiOutlineLogout />, href: "/logout" },
 ];
 
 const menus = [
   { name: "Dashboard", icon: <AiFillDashboard />, href: "/dashboard" },
   { name: "Current Marathon", icon: <RiRunFill />, href: "/current-marathon" },
 ];
+
+const handleLogOut = () => {
+  console.log("handleLogOut");
+};
 
 const SidebarMenu = () => {
   const location = useLocation();
@@ -68,6 +72,10 @@ const SidebarMenu = () => {
       </div>
       <ul className="sidebar-navbar__menu--list pt-2">
         {memoizedUserInformation}
+        <li onClick={handleLogOut}>
+          <AiOutlineLogout />
+          <span className="mx-2">Logout</span>
+        </li>
       </ul>
     </div>
   );
