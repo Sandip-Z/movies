@@ -106,7 +106,7 @@ const Body = () => {
   };
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
-      <main className="row text-light p-3">
+      <main className="row text-light">
         <div className="col-lg-4 p-3">
           <ToWatch />
         </div>

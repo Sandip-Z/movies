@@ -46,7 +46,7 @@ p {
 }
 
 .search-result__list--item:hover {
-  /* background-color: grey; */
+  background-color: grey;
   cursor: pointer;
 }
 
@@ -68,24 +68,32 @@ p {
   top: 35px;
   width: 500px;
   /* border: 1px solid red; */
-  /* background-color: lightgrey; */
+  background-color: lightgrey;
   max-height: 450px;
   overflow-y: auto;
   padding: 15px;
 }
 
 .bg-dark {
-  /* background-color: rgb(53, 52, 52); */
+  background-color: rgb(53, 52, 52);
 }
 
 .text-light {
-  /* color: whitesmoke; */
+  color: whitesmoke;
 }
 
 nav {
-  /* background-color: teal; */
+  background-color: teal;
   padding: 12px;
   box-shadow: 1px 1px 15px rgb(0, 0, 0, 0.2);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+main {
+  /* padding-top: 85px !important; */
+  padding: 85px !important;
 }
 
 .d-flex {
@@ -114,29 +122,29 @@ nav {
 }
 
 .btn-primary {
-  /* background-color: tomato; */
+  background-color: tomato;
 }
 
 .btn-primary:hover {
-  /* background-color: rgb(240, 93, 68); */
+  background-color: rgb(240, 93, 68);
 }
 
 .btn-secondary {
-  /* background-color: rgb(240, 238, 240); */
+  background-color: rgb(240, 238, 240);
 }
 
 .btn-secondary:hover {
-  /* background-color: whitesmoke; */
+  background-color: whitesmoke;
 }
 
 .btn-tertiary {
-  /* background-color: rgb(37, 34, 34); */
+  background-color: rgb(37, 34, 34);
 }
 
 .dropdown {
   position: absolute !important;
   z-index: 100;
-  /* background-color: rgb(197, 197, 197); */
+  background-color: rgb(197, 197, 197);
   top: 55px;
   right: 70px;
   list-style: none;
@@ -147,7 +155,7 @@ nav {
 }
 
 .dropdown li:hover {
-  /* background-color: lightgray; */
+  background-color: lightgray;
   cursor: pointer;
 }
 
@@ -162,28 +170,29 @@ nav {
   padding: 0 9px !important;
   /* font-weight: bold; */
   border-radius: 50%;
-  /* color: black; */
+  color: black;
   transition: all 0.5s;
   padding-bottom: 4px !important;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 .cross-button:hover {
-  /* background-color: rgb(247, 39, 39); */
-  /* color: whitesmoke; */
+  background-color: rgb(247, 39, 39);
+  color: white;
   cursor: pointer;
   transition: all 0.5s;
 }
 
 .draggable-box {
   margin: auto;
-  /* background-color: #bdc3c7; */
+  background-color: #bdc3c7;
   margin: 15px 25px;
   border-radius: 7px;
   padding-top: 10px;
   padding-bottom: 10px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s;
+  z-index: -1;
 }
 
 .draggable-box:hover {
@@ -200,6 +209,7 @@ nav {
   /* background-color: #979999; */
   border-radius: 2px;
   box-shadow: 8px 16px 50px rgba(40, 37, 37, 0.5) !important;
+  z-index: -1;
 }
 
 .section-heading {
