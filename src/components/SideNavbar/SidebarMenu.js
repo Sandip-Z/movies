@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import { AiFillDashboard, AiOutlineLogout } from "react-icons/ai";
 import { RiRunFill, RiProfileFill } from "react-icons/ri";
@@ -9,11 +10,15 @@ const SidebarMenu = () => {
       <ul className="sidebar-navbar__menu--list">
         <li>
           <AiFillDashboard />
-          <span className="mx-2">Dashboard</span>
+          <span className="mx-2">
+            <Link to="/dashboard">Dashboard</Link>
+          </span>
         </li>
         <li className="active">
           <RiRunFill />
-          <span className="mx-2">Current Marathon</span>
+          <span className="mx-2">
+            <Link to="current-marathon">Current Marathon</Link>
+          </span>
         </li>
       </ul>
       <div className="d-flex justify-content-between px-3">
@@ -31,7 +36,10 @@ const SidebarMenu = () => {
       <ul className="sidebar-navbar__menu--list pt-2">
         <li>
           {" "}
-          <RiProfileFill /> <span className="mx-2">My Profile</span>
+          <RiProfileFill />{" "}
+          <span className="mx-2">
+            <Link to="/profile">My Profile</Link>
+          </span>
         </li>
         <li>
           <AiOutlineLogout />
