@@ -14,6 +14,18 @@ body {
   /* background-color: #e5e8ea !important; */
 }
 
+a {
+  color: inherit;
+  background: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit !important;
+  background: inherit !important;
+  text-decoration: none !important;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
