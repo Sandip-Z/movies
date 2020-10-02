@@ -1,7 +1,15 @@
 import React from "react";
+import AboutUsHeader from "../components/Aboutus/AboutUsHeader";
+import AboutUsNavbar from "../components/Aboutus/AboutUsNavbar";
+import "../components/Aboutus/aboutus.css";
 
 const AboutUsPage = () => {
-  return <p>This is about us page.</p>;
+  return (
+    <>
+      <AboutUsNavbar />
+      <AboutUsHeader />
+    </>
+  );
 };
 
 export default AboutUsPage;

@@ -1,0 +1,21 @@
+.about-us-nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent !important;
+}
+
+.about-us-nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.about-us-nav ul li {
+  padding: 0 15px;
+}
+
+.about-us-header {
+  background-image: url("../../assets/aboutus-bg.jpg");
+  background-size: cover;
+  height: 100vh;
+  padding-top: 100px;
+}
