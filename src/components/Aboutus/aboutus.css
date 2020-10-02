@@ -7,15 +7,67 @@
 .about-us-nav ul {
   display: flex;
   list-style: none;
+  margin-bottom: 0px !important;
 }
 
 .about-us-nav ul li {
-  padding: 0 15px;
+  padding: 7px 15px;
+  color: aliceblue;
+}
+
+.highlight-list-item {
+  background: rgb(226, 226, 226);
+  padding: 15px;
+  color: #7510f2 !important;
+  border-radius: 5px;
+  transition: all 0.5s;
+  cursor: pointer;
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.2);
+}
+
+.highlight-list-item:hover {
+  background-color: #4b168d;
+  color: aliceblue !important;
+  transition: all 0.5s;
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.7);
 }
 
 .about-us-header {
+  position: relative;
   background-image: url("../../assets/aboutus-bg.jpg");
   background-size: cover;
   height: 100vh;
   padding-top: 100px;
+}
+
+.about-us-header div {
+  position: absolute;
+  top: 30%;
+  left: 15%;
+}
+
+.about-us-header h1 {
+  font-size: 60px;
+  text-shadow: 4px 3px 5px rgba(9, 7, 14, 0.33);
+  font-weight: bolder;
+}
+
+.about-us-header h5 {
+  font-size: 20px;
+}
+
+.header-button {
+  padding: 7px 30px;
+  border: 0px;
+  margin-top: 10px;
+  transition: all 0.5s;
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.header-button:hover {
+  background-color: #4b168d;
+  color: aliceblue !important;
+  transition: all 0.5s;
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.7);
 }

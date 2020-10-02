@@ -8,7 +8,7 @@ const AboutUsNavbar = () => {
         <ul>
           <li>About Us</li>
           <li>FAQs</li>
-          <li>Go to application</li>
+          <li className="highlight-list-item">Go to application</li>
         </ul>
       </div>
     </nav>

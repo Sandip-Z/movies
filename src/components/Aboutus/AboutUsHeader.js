@@ -3,8 +3,11 @@ import React from "react";
 const AboutUsHeader = () => {
   return (
     <header className="about-us-header">
-      <h1>TRACK YOUR MOVIE MARATHONS.</h1>
-      <h5>NO MOVIEIN YOUR WATCH LIST, GOES UNWATCHED</h5>
+      <div>
+        <h1>Movie List</h1>
+        <h5>TRACK YOUR MOVIE MARATHONS.</h5>
+        <button className="header-button">Log in</button>
+      </div>
     </header>
   );
 };
