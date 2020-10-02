@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import LoginPage from "./pages/LoginPage";
-import ApplicationPage from "./pages/ApplicationPage";
+// import ApplicationPage from "./pages/ApplicationPage";
+import AboutUsPage from "./pages/AboutUsPage";
 import DashboardPage from "./pages/DashboardPage";
 import CurrentMarathonPage from "./pages/CurrentMarathonPage";
 import ProfilePage from "./pages/ProfilePage";
@@ -23,6 +24,7 @@ ReactDOM.render(
       <Router>
         <Switch>
           <PrivateRoute path="/" exact component={App} />
+          <PublicRoute path="/about-us" exact component={AboutUsPage} />
           <PublicRoute path="/login" component={LoginPage} />
           <PrivateRoute
             path="/current-marathon"
