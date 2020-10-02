@@ -22,7 +22,7 @@ ReactDOM.render(
     <Provider store={Store}>
       <Router>
         <Switch>
-          <Route path="/" exact component={App} />
+          <PrivateRoute path="/" exact component={App} />
           <PublicRoute path="/login" component={LoginPage} />
           <PrivateRoute
             path="/current-marathon"
