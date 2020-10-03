@@ -8,6 +8,7 @@ import AboutUsPage from "./pages/AboutUsPage";
 import DashboardPage from "./pages/DashboardPage";
 import CurrentMarathonPage from "./pages/CurrentMarathonPage";
 import ProfilePage from "./pages/ProfilePage";
+import RecommendationPage from "./pages/RecommendationPage";
 import UnlistedPage from "./pages/UnlistedPage";
 import Store from "./redux/store";
 import { Provider } from "react-redux";
@@ -29,6 +30,10 @@ ReactDOM.render(
           <PrivateRoute
             path="/current-marathon"
             component={CurrentMarathonPage}
+          />
+          <PrivateRoute
+            path="/recommendations"
+            component={RecommendationPage}
           />
           <PrivateRoute path="/dashboard" component={DashboardPage} />
           <PrivateRoute path="/profile" component={ProfilePage} />

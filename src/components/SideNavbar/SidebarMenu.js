@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { BsSearch } from "react-icons/bs";
+import { BsSearch, BsViewList } from "react-icons/bs";
 import { AiFillDashboard, AiOutlineLogout } from "react-icons/ai";
 import { RiRunFill, RiProfileFill } from "react-icons/ri";
 
@@ -12,6 +12,11 @@ const userInformation = [
 const menus = [
   { name: "Dashboard", icon: <AiFillDashboard />, href: "/dashboard" },
   { name: "Current Marathon", icon: <RiRunFill />, href: "/current-marathon" },
+  {
+    name: "Recommendation List",
+    icon: <BsViewList />,
+    href: "/recommendations",
+  },
 ];
 
 const handleLogOut = () => {
