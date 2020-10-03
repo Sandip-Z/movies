@@ -22,14 +22,14 @@ const RecommendCard = ({ movie }) => {
           <p className="recommend-card__detail--title">{movie.movie.name}</p>
         </div>
         <div>
-          <p>
+          <p className="d-flex">
             <span className="mr-2">
               <BsFillInfoCircleFill />
             </span>
-            <span>{movie.movie.description}</span>
+            <span className="truncate">{movie.movie.description}</span>
           </p>
         </div>
-        <div>
+        <div className="recommend-card__detail--user">
           <p>
             <span className="mr-2">
               <BsFillPersonFill />
