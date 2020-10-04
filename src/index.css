@@ -39,6 +39,7 @@ p {
 
 .search-box {
   position: relative;
+  display: flex;
 }
 
 .search-result {
@@ -233,8 +234,8 @@ main {
 
 .login {
   /* background-color: whitesmoke; */
-  padding: 50px;
-  margin: 50px;
+  /* padding: 50px; */
+  /* margin: 50px; */
 }
 
 form.login-form {
@@ -256,7 +257,7 @@ form.login-form section input {
 .login-image-wrapper {
   background-image: linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.7),
       rgba(58, 58, 58, 0.493)
     ),
     url("../src/assets/login.svg");
@@ -267,6 +268,13 @@ form.login-form section input {
   justify-content: center;
   border-radius: 2%;
   box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.2);
+  color: whitesmoke;
+  padding: 65px 25px;
+  text-align: center;
+}
+
+.login-image-wrapper img {
+  max-width: 100%;
 }
 
 .sidebar-toggler-button {
@@ -347,4 +355,13 @@ form.login-form section input {
   background: #ecf0f1;
   padding: 15px;
   box-shadow: 8px 16px 50px rgba(40, 37, 37, 0.5) !important;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  background-color: white;
 }

@@ -70,7 +70,13 @@
   border-radius: 5px;
 }
 
-.header-button:hover {
+.header-button-dark {
+  background-color: grey !important;
+  color: whitesmoke !important;
+}
+
+.header-button:hover,
+.header-button-dark:hover {
   text-decoration: none;
   background-color: #4b168d !important;
   color: aliceblue !important;
