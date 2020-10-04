@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import { BsSearch, BsViewList } from "react-icons/bs";
 import { AiFillDashboard, AiOutlineLogout } from "react-icons/ai";
 import { RiRunFill, RiProfileFill } from "react-icons/ri";
@@ -19,12 +19,9 @@ const menus = [
   },
 ];
 
-const handleLogOut = () => {
-  console.log("handleLogOut");
-};
-
 const SidebarMenu = () => {
   const location = useLocation();
+  const history = useHistory();
 
   const memoizedMenu = useMemo(() => {
     const renderMenus = menus.map((menu) => {
@@ -59,6 +56,11 @@ const SidebarMenu = () => {
     });
     return renderUserInformation;
   }, [userInformation, location]);
+
+  const handleLogOut = () => {
+    localStorage.removeItem("loggedin");
+    history.push("/");
+  };
 
   return (
     <div className="side-navbar__menu">
