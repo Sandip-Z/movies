@@ -10,21 +10,19 @@ const MarathonHeader = () => {
   );
   const dispatch = useDispatch();
   const [editMarathonName, setEditMarathonName] = useState(false);
-  const [editingMarathonName, setEdittingMarathonName] = useState(
-    currentMarathonName
-  );
+  const [newMarathonName, setNewMarathonName] = useState(currentMarathonName);
 
   const handleEditingMarathonName = (e) => {
-    setEdittingMarathonName(e.target.value);
+    setNewMarathonName(e.target.value); //
   };
 
   const handleEditSuccessful = (e) => {
-    dispatch(editCurrentMarathonName(editingMarathonName));
+    dispatch(editCurrentMarathonName(newMarathonName));
     setEditMarathonName(false);
   };
 
   const handleEditCancel = (e) => {
-    setEdittingMarathonName(currentMarathonName);
+    setNewMarathonName(currentMarathonName); //
     setEditMarathonName(false);
   };
 
@@ -37,7 +35,7 @@ const MarathonHeader = () => {
           <>
             <input
               type="text"
-              value={editingMarathonName}
+              value={newMarathonName}
               onChange={handleEditingMarathonName}
             />
             <span>
