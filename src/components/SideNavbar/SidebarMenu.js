@@ -59,7 +59,7 @@ const SidebarMenu = () => {
 
   const handleLogOut = () => {
     localStorage.removeItem("loggedin");
-    history.push("/");
+    window.location.reload();
   };
 
   return (
