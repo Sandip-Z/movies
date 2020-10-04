@@ -1,11 +1,12 @@
 import React from "react";
 import { Redirect, Route } from "react-router-dom";
 import PrivateLayout from "../Layout/PrivateLayout";
+import isLoggedin from "../../utils/isLoggedIn";
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
-  const isLoggedin = () => {
-    return true;
-  };
+  // const isLoggedin = () => {
+  //   return true;
+  // };
 
   return (
     <Route
