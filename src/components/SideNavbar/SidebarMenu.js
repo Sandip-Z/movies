@@ -11,7 +11,7 @@ const userInformation = [
 
 const menus = [
   { name: "Dashboard", icon: <AiFillDashboard />, href: "/dashboard" },
-  { name: "Current Marathon", icon: <RiRunFill />, href: "/current-marathon" },
+  { name: "Current Marathon", icon: <RiRunFill />, href: "/" },
   {
     name: "Recommendation List",
     icon: <BsViewList />,

@@ -24,13 +24,13 @@ ReactDOM.render(
     <Provider store={Store}>
       <Router>
         <Switch>
-          <PrivateRoute path="/" exact component={App} />
+          <PrivateRoute path="/" exact component={CurrentMarathonPage} />
           <PublicRoute path="/about-us" exact component={AboutUsPage} />
           <PublicRoute path="/login" component={LoginPage} />
-          <PrivateRoute
+          {/* <PrivateRoute
             path="/current-marathon"
             component={CurrentMarathonPage}
-          />
+          /> */}
           <PrivateRoute
             path="/recommendations"
             component={RecommendationPage}
