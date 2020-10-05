@@ -1,12 +1,14 @@
 import { ADD_TO_ARCHIVE } from "./actions";
 
 const initialStore = {
-  //   slugname: {
-  //     watchlist: [],
-  //     watchingList: [],
-  //     watchedList: [],
-  //     name: "",
-  //   },
+  archives: {
+    slugname: {
+      watchlist: [],
+      watchingList: [],
+      watchedList: [],
+      name: "Slug Name",
+    },
+  },
 };
 
 export default (state = initialStore, action) => {
@@ -15,7 +17,10 @@ export default (state = initialStore, action) => {
     case ADD_TO_ARCHIVE:
       return {
         ...state,
-        [payload.slugname]: payload.data,
+        archives: {
+          ...state.archives,
+          [payload.slugname]: { ...payload.data },
+        },
       };
     default:
       return state;

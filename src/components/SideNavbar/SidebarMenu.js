@@ -1,8 +1,10 @@
 import React, { useMemo } from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { BsSearch, BsViewList } from "react-icons/bs";
 import { AiFillDashboard, AiOutlineLogout } from "react-icons/ai";
 import { RiRunFill, RiProfileFill } from "react-icons/ri";
+import { FaFileArchive } from "react-icons/fa";
 
 const userInformation = [
   {
@@ -34,6 +36,19 @@ const menus = [
 const SidebarMenu = () => {
   const location = useLocation();
   const history = useHistory();
+
+  const archives = useSelector((state) => state.ArchiveReducer.archives);
+
+  const renderArchives = (Object.keys(archives) || []).map((key) => {
+    return (
+      <li key={key}>
+        <FaFileArchive style={{ margin: "auto 0" }} />
+        <span className="mx-2">
+          <Link to={`/archives/${key}`}>{archives[key].name}</Link>
+        </span>
+      </li>
+    );
+  });
 
   const memoizedMenu = useMemo(() => {
     const renderMenus = menus.map((menu) => {
@@ -84,7 +99,8 @@ const SidebarMenu = () => {
         </div>
       </div>
       <ul className="sidebar-navbar__menu--list">
-        <li className="no-item">No Archives Found</li>
+        {!renderArchives && <li className="no-item">No Archives Found</li>}
+        {renderArchives}
       </ul>
       <div className="px-3">
         <p className="sidebar-title">User Information</p>
