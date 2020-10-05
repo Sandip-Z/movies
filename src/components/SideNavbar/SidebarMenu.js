@@ -40,6 +40,7 @@ const SidebarMenu = () => {
   const archives = useSelector((state) => state.ArchiveReducer.archives);
 
   const renderArchives = (Object.keys(archives) || []).map((key) => {
+    console.log(key);
     return (
       <li key={key}>
         <FaFileArchive style={{ margin: "auto 0" }} />
@@ -99,7 +100,9 @@ const SidebarMenu = () => {
         </div>
       </div>
       <ul className="sidebar-navbar__menu--list">
-        {!renderArchives && <li className="no-item">No Archives Found</li>}
+        {!renderArchives.length && (
+          <li className="no-item">No Archives Found</li>
+        )}
         {renderArchives}
       </ul>
       <div className="px-3">

@@ -2,12 +2,12 @@ import { ADD_TO_ARCHIVE } from "./actions";
 
 const initialStore = {
   archives: {
-    slugname: {
-      watchlist: [],
-      watchingList: [],
-      watchedList: [],
-      name: "Slug Name",
-    },
+    // slugname: {
+    //   watchlist: [],
+    //   watchingList: [],
+    //   watchedList: [],
+    //   name: "Slug Name",
+    // },
   },
 };
 
