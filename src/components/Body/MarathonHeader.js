@@ -36,14 +36,14 @@ const MarathonHeader = () => {
     <div className="d-flex justify-content-between marathon-header">
       <p className="d-flex align-items-center">
         {!editMarathonName ? (
-          <span className="mr-3">{currentMarathonName}</span>
+          <span className="mr-2">{currentMarathonName}</span>
         ) : (
           <>
             <input
               type="text"
               value={newMarathonName}
               onChange={handleEditingMarathonName}
-              className="mr-3"
+              className="mr-3 edit-marathon-name"
             />
             <span className="d-flex">
               <Icon

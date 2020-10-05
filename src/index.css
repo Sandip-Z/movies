@@ -377,3 +377,10 @@ form.login-form section input {
   align-items: center;
   background-color: white;
 }
+
+.edit-marathon-name {
+  padding: 5px 15px;
+  padding-bottom: 0px;
+  border: 0px;
+  border-bottom: 1px solid grey;
+}
