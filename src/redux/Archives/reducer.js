@@ -19,7 +19,7 @@ export default (state = initialStore, action) => {
         ...state,
         archives: {
           ...state.archives,
-          [payload.slugname]: { ...payload.data },
+          [action.slugname]: { ...action.data },
         },
       };
     default:

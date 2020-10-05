@@ -8,18 +8,46 @@ import {
 } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { editCurrentMarathonName } from "../../redux/Application/action";
+import { addToArchive } from "../../redux/Archives/actions";
 import Icon from "../Atoms/Icon";
 
+const generateSlugName = (name) => {
+  return name.toLowerCase().replaceAll(" ", "_");
+};
+
 const MarathonHeader = () => {
+  const dispatch = useDispatch();
   const currentMarathonName = useSelector(
     (state) => state.ApplicationReducer.currentMarathonName
   );
-  const dispatch = useDispatch();
+
+  const watchList = useSelector((state) => state.MovieToWatchReducer.toWatch);
+  const watchingList = useSelector(
+    (state) => state.MovieWatchingReducer.watching
+  );
+  const watchedList = useSelector((state) => state.MovieWatchedReducer.watched);
+
   const [editMarathonName, setEditMarathonName] = useState(false);
   const [newMarathonName, setNewMarathonName] = useState(currentMarathonName);
 
   const handleEditingMarathonName = (e) => {
     setNewMarathonName(e.target.value); //
+  };
+
+  const cloneCurrentMarathon = () => {
+    const data = {
+      watchList,
+      watchingList,
+      watchedList,
+      name: currentMarathonName,
+    };
+    return data;
+  };
+
+  const handleArchive = () => {
+    const data = cloneCurrentMarathon();
+    const slug = generateSlugName(currentMarathonName);
+    dispatch(addToArchive(slug, data));
   };
 
   const handleEditSuccessful = (e) => {
@@ -68,7 +96,7 @@ const MarathonHeader = () => {
           )}
         </span>
       </p>
-      <div>
+      <div onClick={handleArchive}>
         <Icon
           component={<FaFileArchive className="icon" title="Archive this" />}
         />

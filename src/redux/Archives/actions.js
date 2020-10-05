@@ -1,6 +1,7 @@
-const ADD_TO_ARCHIVE = "ADD_TO_ARCHIVE";
+export const ADD_TO_ARCHIVE = "ADD_TO_ARCHIVE";
 
-const addToArchive = ({ slugname, data }) => {
+export const addToArchive = (slugname, data) => {
+  console.log("hello");
   return {
     type: ADD_TO_ARCHIVE,
     slugname,

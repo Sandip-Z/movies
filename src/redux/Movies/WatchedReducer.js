@@ -3,6 +3,7 @@ import {
   MIGRATE_TO_WATCHED,
   REARRANGE_IN_WATCHED,
   REMOVE_FROM_WATCHED,
+  CLEAN_WATCHED,
 } from "./action";
 
 import { rearrange } from "../../utils/arrays";
@@ -48,6 +49,11 @@ export default (state = initialStore, action) => {
       return {
         ...state,
         watched: rearranged,
+      };
+    case CLEAN_WATCHED:
+      return {
+        ...state,
+        watched: [],
       };
     default:
       return state;
