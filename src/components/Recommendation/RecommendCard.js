@@ -7,6 +7,7 @@ import {
   BsFillPersonFill,
 } from "react-icons/bs";
 // import moment from "moment";
+import Icon from "../Atoms/Icon";
 
 const RecommendCard = ({ movie }) => {
   return (
@@ -47,13 +48,25 @@ const RecommendCard = ({ movie }) => {
           </p>
         </div>
         <div className="d-flex justify-content-end">
-          <BsPlusCircleFill
-            className="recommend-card__icon"
-            title="Add to watch list"
+          <Icon
+            component={
+              <BsPlusCircleFill
+                className="recommend-card__icon"
+                title="Add to watch list"
+                style={{ color: "#27ae60" }}
+              />
+            }
+            style={{ marginRight: "10px" }}
           />
-          <BsXCircleFill
-            className="recommend-card__icon"
-            title="Remove from recommendation list"
+          <Icon
+            component={
+              <BsXCircleFill
+                className="recommend-card__icon"
+                title="Remove from recommendation list"
+                style={{ color: "#c0392b" }}
+              />
+            }
+            style={{ marginRight: "10px" }}
           />
         </div>
       </div>
