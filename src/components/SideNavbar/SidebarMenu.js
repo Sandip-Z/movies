@@ -78,13 +78,13 @@ const SidebarMenu = () => {
     <div className="side-navbar__menu">
       <ul className="sidebar-navbar__menu--list">{memoizedMenu}</ul>
       <div className="d-flex justify-content-between px-3">
-        <p className="sidebar-title">Archieves</p>
+        <p className="sidebar-title">Archives</p>
         <div>
           <BsSearch />
         </div>
       </div>
       <ul className="sidebar-navbar__menu--list">
-        <li className="no-item">No Archieves Found</li>
+        <li className="no-item">No Archives Found</li>
       </ul>
       <div className="px-3">
         <p className="sidebar-title">User Information</p>
