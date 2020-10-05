@@ -9,6 +9,7 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { editCurrentMarathonName } from "../../redux/Application/action";
 import { addToArchive } from "../../redux/Archives/actions";
+import { cleanCurrentMarathon } from "../../redux/Movies/action";
 import Icon from "../Atoms/Icon";
 
 const generateSlugName = (name) => {
@@ -48,6 +49,7 @@ const MarathonHeader = () => {
     const data = cloneCurrentMarathon();
     const slug = generateSlugName(currentMarathonName);
     dispatch(addToArchive(slug, data));
+    dispatch(cleanCurrentMarathon());
   };
 
   const handleEditSuccessful = (e) => {

@@ -3,7 +3,7 @@ import {
   MIGRATE_TO_TO_WATCH,
   REARRANGE_IN_TO_WATCH,
   REMOVE_FROM_TO_WATCH,
-  CLEAN_TO_WATCH,
+  CLEAN_CURRENT_MARATHON,
 } from "./action";
 
 import { rearrange } from "../../utils/arrays";
@@ -177,7 +177,7 @@ export default (state = initialStore, action) => {
         ...state,
         toWatch: rearranged,
       };
-    case CLEAN_TO_WATCH:
+    case CLEAN_CURRENT_MARATHON:
       return {
         ...state,
         toWatch: [],

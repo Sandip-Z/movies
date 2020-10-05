@@ -3,7 +3,7 @@ import {
   MIGRATE_TO_WATCHING,
   REARRANGE_IN_WATCHING,
   REMOVE_FROM_WATCHING,
-  CLEAN_WATCHING,
+  CLEAN_CURRENT_MARATHON,
 } from "./action";
 
 import { rearrange } from "../../utils/arrays";
@@ -50,7 +50,7 @@ export default (state = initialStore, action) => {
         ...state,
         watching: rearranged,
       };
-    case CLEAN_WATCHING:
+    case CLEAN_CURRENT_MARATHON:
       return {
         ...state,
         watching: [],
