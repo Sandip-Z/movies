@@ -351,6 +351,18 @@ form.login-form section input {
   font-size: 22px;
 }
 
+.icon-wrapper {
+  background-color: rgba(255, 255, 255, 0.137);
+  border-radius: 50%;
+  display: flex;
+  padding: 14px 13px 13px 14px;
+}
+
+.icon-wrapper:hover {
+  background-color: rgba(223, 223, 223, 0.329);
+  border-radius: 50%;
+}
+
 .marathon-header {
   background: #ecf0f1;
   padding: 15px;

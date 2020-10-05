@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 // import { FiEdit2 } from "react-icons/fi";
-import { FaFileArchive, FaEdit, FaCheck, FaCross } from "react-icons/fa";
+import {
+  FaFileArchive,
+  FaEdit,
+  FaCheckCircle,
+  FaRegTimesCircle,
+} from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { editCurrentMarathonName } from "../../redux/Application/action";
+import Icon from "../Atoms/Icon";
 
 const MarathonHeader = () => {
   const currentMarathonName = useSelector(
@@ -28,33 +34,39 @@ const MarathonHeader = () => {
 
   return (
     <div className="d-flex justify-content-between marathon-header">
-      <p>
+      <p className="d-flex align-items-center">
         {!editMarathonName ? (
-          <span>{currentMarathonName}</span>
+          <span className="mr-3">{currentMarathonName}</span>
         ) : (
           <>
             <input
               type="text"
               value={newMarathonName}
               onChange={handleEditingMarathonName}
+              className="mr-3"
             />
-            <span>
-              <FaCheck onClick={handleEditSuccessful} />{" "}
-              <FaCross onClick={handleEditCancel} />
+            <span className="d-flex">
+              <Icon
+                component={<FaCheckCircle onClick={handleEditSuccessful} />}
+              />{" "}
+              <Icon
+                component={<FaRegTimesCircle onClick={handleEditCancel} />}
+              />
             </span>
           </>
         )}
         <span>
           {!editMarathonName && (
-            <FaEdit
-              className="ml-3"
-              onClick={() => setEditMarathonName(true)}
+            <Icon
+              component={<FaEdit onClick={() => setEditMarathonName(true)} />}
             />
           )}
         </span>
       </p>
       <div>
-        <FaFileArchive className="icon" title="Archive this" />
+        <Icon
+          component={<FaFileArchive className="icon" title="Archive this" />}
+        />
       </div>
     </div>
   );
