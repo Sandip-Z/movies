@@ -19,13 +19,22 @@
 }
 
 .sidebar-navbar__menu--list li {
-  padding: 15px;
+  padding: 0 0 0 15px;
   cursor: pointer;
+  display: flex;
+}
+
+.sidebar-navbar__menu--list span {
+  width: 100%;
 }
 
 .sidebar-navbar__menu--list li a {
   text-decoration: none;
   color: black;
+  width: 100%;
+  display: inline-block;
+  padding: 15px;
+  padding-left: 0px;
 }
 
 .sidebar-navbar__menu--list li:hover {
@@ -41,6 +50,7 @@
   color: grey;
   font-style: italic;
   cursor: text;
+  padding: 15px;
 }
 
 .sidebar-navbar__menu--list li.no-item:hover {

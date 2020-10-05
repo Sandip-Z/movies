@@ -36,7 +36,7 @@ const MarathonHeader = () => {
     <div className="d-flex justify-content-between marathon-header">
       <p className="d-flex align-items-center">
         {!editMarathonName ? (
-          <span className="mr-2">{currentMarathonName}</span>
+          <span className="mr-2 marathon-title">{currentMarathonName}</span>
         ) : (
           <>
             <input
@@ -58,7 +58,12 @@ const MarathonHeader = () => {
         <span>
           {!editMarathonName && (
             <Icon
-              component={<FaEdit onClick={() => setEditMarathonName(true)} />}
+              component={
+                <FaEdit
+                  onClick={() => setEditMarathonName(true)}
+                  title="Edit Name"
+                />
+              }
             />
           )}
         </span>

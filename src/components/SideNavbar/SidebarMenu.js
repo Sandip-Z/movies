@@ -5,16 +5,28 @@ import { AiFillDashboard, AiOutlineLogout } from "react-icons/ai";
 import { RiRunFill, RiProfileFill } from "react-icons/ri";
 
 const userInformation = [
-  { name: "Profile", icon: <RiProfileFill />, href: "/profile" },
+  {
+    name: "Profile",
+    icon: <RiProfileFill style={{ margin: "auto 0" }} />,
+    href: "/profile",
+  },
   // { name: "Logout", icon: <AiOutlineLogout />, href: "/logout" },
 ];
 
 const menus = [
-  { name: "Dashboard", icon: <AiFillDashboard />, href: "/dashboard" },
-  { name: "Current Marathon", icon: <RiRunFill />, href: "/" },
+  {
+    name: "Dashboard",
+    icon: <AiFillDashboard style={{ margin: "auto 0" }} />,
+    href: "/dashboard",
+  },
+  {
+    name: "Current Marathon",
+    icon: <RiRunFill style={{ margin: "auto 0" }} />,
+    href: "/",
+  },
   {
     name: "Recommendation List",
-    icon: <BsViewList />,
+    icon: <BsViewList style={{ margin: "auto 0" }} />,
     href: "/recommendations",
   },
 ];
@@ -80,8 +92,10 @@ const SidebarMenu = () => {
       <ul className="sidebar-navbar__menu--list pt-2">
         {memoizedUserInformation}
         <li onClick={handleLogOut}>
-          <AiOutlineLogout />
-          <span className="mx-2">Logout</span>
+          <AiOutlineLogout style={{ margin: "auto 0" }} />
+          <span className="mx-2">
+            <a>Logout</a>
+          </span>
         </li>
       </ul>
     </div>

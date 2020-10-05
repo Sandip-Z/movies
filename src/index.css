@@ -383,4 +383,12 @@ form.login-form section input {
   padding-bottom: 0px;
   border: 0px;
   border-bottom: 1px solid grey;
+  background-color: inherit;
+}
+
+.marathon-title {
+  margin-left: 20px;
+  font-weight: bold;
+  letter-spacing: 1.3px;
+  color: #534a4a;
 }
