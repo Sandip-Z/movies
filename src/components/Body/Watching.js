@@ -3,7 +3,7 @@ import { Droppable } from "react-beautiful-dnd";
 import DisplayMovie from "./DisplayMovie";
 import SectionHeading from "./SectionHeading";
 
-const Watching = ({ movies, allowDrag, allowDrop }) => {
+const Watching = ({ movies, allowDrag, allowDrop, allowEdit }) => {
   const renderData = (movies || []).map((movie, index) => {
     return (
       <DisplayMovie
@@ -12,6 +12,7 @@ const Watching = ({ movies, allowDrag, allowDrop }) => {
         section="watching"
         index={index}
         allowDrag={allowDrag}
+        allowEdit={allowEdit}
       />
     );
   });

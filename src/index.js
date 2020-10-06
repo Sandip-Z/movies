@@ -9,6 +9,7 @@ import DashboardPage from "./pages/DashboardPage";
 import CurrentMarathonPage from "./pages/CurrentMarathonPage";
 import ProfilePage from "./pages/ProfilePage";
 import RecommendationPage from "./pages/RecommendationPage";
+import ArchivePage from "./pages/ArchivePage";
 import UnlistedPage from "./pages/UnlistedPage";
 import Store from "./redux/store";
 import { Provider } from "react-redux";
@@ -37,6 +38,7 @@ ReactDOM.render(
           />
           <PrivateRoute path="/dashboard" component={DashboardPage} />
           <PrivateRoute path="/profile" component={ProfilePage} />
+          <PrivateRoute path="/archives/:slugname" component={ArchivePage} />
           <Route exact component={UnlistedPage} />
         </Switch>
       </Router>

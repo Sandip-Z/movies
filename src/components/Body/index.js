@@ -60,7 +60,6 @@ const Body = () => {
     const destinationIndex = dragged.destination?.index;
     const sourceIndex = dragged.source?.index;
     const obj = getMovieFromReducer(draggedId, sourceId);
-    console.log(obj);
     if (sourceId === destinationId) {
       switch (sourceId) {
         case "towatch":
@@ -102,19 +101,18 @@ const Body = () => {
           break;
       }
     }
-    console.log(dragged);
   };
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
       <div className="row text-light">
         <div className="col-lg-4 p-3">
-          <ToWatch allowDrag allowDrop movies={toWatchMovies} />
+          <ToWatch allowDrag allowDrop movies={toWatchMovies} allowEdit />
         </div>
         <div className="col-lg-4 p-3">
-          <Watching allowDrag allowDrop movies={watchingMovies} />
+          <Watching allowDrag allowDrop movies={watchingMovies} allowEdit />
         </div>
         <div className="col-lg-4 p-3">
-          <Watched allowDrag allowDrop movies={watchedMovies} />
+          <Watched allowDrag allowDrop movies={watchedMovies} allowEdit />
         </div>
       </div>
     </DragDropContext>

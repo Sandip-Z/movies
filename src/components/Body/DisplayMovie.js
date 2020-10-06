@@ -8,7 +8,7 @@ import {
 } from "../../redux/Movies/action";
 import { Draggable } from "react-beautiful-dnd";
 
-const DisplayMovie = ({ movie, section, index, allowDrag }) => {
+const DisplayMovie = ({ movie, section, index, allowDrag, allowEdit }) => {
   const dispatch = useDispatch();
 
   const renderGenres = movie.genres.map((genre) => {
@@ -70,9 +70,11 @@ const DisplayMovie = ({ movie, section, index, allowDrag }) => {
                 Download
               </a>
             </div>
-            <div className="col-lg-2 d-flex justify-content-center align-items-start">
-              <CrossButton handleClick={handleCrossClick} />
-            </div>
+            {allowEdit && (
+              <div className="col-lg-2 d-flex justify-content-center align-items-start">
+                <CrossButton handleClick={handleCrossClick} />
+              </div>
+            )}
           </div>
         );
       }}
