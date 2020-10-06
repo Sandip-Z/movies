@@ -108,13 +108,13 @@ const Body = () => {
     <DragDropContext onDragEnd={handleDragEnd}>
       <div className="row text-light">
         <div className="col-lg-4 p-3">
-          <ToWatch />
+          <ToWatch allowDrag allowDrop movies={toWatchMovies} />
         </div>
         <div className="col-lg-4 p-3">
-          <Watching />
+          <Watching allowDrag allowDrop movies={watchingMovies} />
         </div>
         <div className="col-lg-4 p-3">
-          <Watched />
+          <Watched allowDrag allowDrop movies={watchedMovies} />
         </div>
       </div>
     </DragDropContext>

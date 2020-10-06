@@ -1,29 +1,24 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Droppable } from "react-beautiful-dnd";
-import EmptyList from "./EmptyList";
 import DisplayMovie from "./DisplayMovie";
 import SectionHeading from "./SectionHeading";
 
-const Watching = () => {
-  const movies =
-    useSelector((state) => state.MovieWatchingReducer.watching) || [];
-  const dispatch = useDispatch();
-
-  const renderData = movies.map((movie, index) => {
+const Watching = ({ movies, allowDrag, allowDrop }) => {
+  const renderData = (movies || []).map((movie, index) => {
     return (
       <DisplayMovie
         movie={movie}
         key={movie.id}
         section="watching"
         index={index}
+        allowDrag={allowDrag}
       />
     );
   });
 
   return (
     <>
-      <Droppable droppableId="watching">
+      <Droppable droppableId="watching" isDropDisabled={!allowDrop}>
         {(provided) => {
           return (
             <div

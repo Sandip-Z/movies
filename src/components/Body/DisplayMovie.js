@@ -8,8 +8,7 @@ import {
 } from "../../redux/Movies/action";
 import { Draggable } from "react-beautiful-dnd";
 
-const DisplayMovie = ({ movie, section, index }) => {
-  //   console.log(movie);
+const DisplayMovie = ({ movie, section, index, allowDrag }) => {
   const dispatch = useDispatch();
 
   const renderGenres = movie.genres.map((genre) => {
@@ -33,7 +32,11 @@ const DisplayMovie = ({ movie, section, index }) => {
   };
 
   return (
-    <Draggable draggableId={movie.id.toString()} index={index}>
+    <Draggable
+      draggableId={movie.id.toString()}
+      index={index}
+      isDragDisabled={!allowDrag}
+    >
       {(provided) => {
         return (
           <div
