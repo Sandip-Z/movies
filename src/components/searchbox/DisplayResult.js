@@ -20,10 +20,10 @@ const DisplayResult = ({ results, focus, loading }) => {
           <img src={result.small_cover_image} />
         </div>
         <div className="search-result__list--item-detail">
-          <h5>
+          <p>
             {result.title}{" "}
             <code className="bg-dark text-light">{result.rating}</code>
-          </h5>
+          </p>
           <small>{result.genres[0]}</small>
           {/* <p className="">{result.synopsis}</p> */}
         </div>
