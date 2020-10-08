@@ -1,7 +1,8 @@
 # Watchlist
 
+Please note, this application is still being developed.
 _This piece of software allows user to track their movie marathon and archive marathons once they are done._
-[visit this site](https://www.watchlist.com)
+[visit this site](https://watchlist-application.herokuapp.com)
 
 ## Features
 
@@ -11,9 +12,5 @@ _This piece of software allows user to track their movie marathon and archive ma
 
 ## What did i learn from this project
 
-- NODEJS
-  - Authenticating user via JWT.
-  - Protecting routes.
-- REACTJS
-  - Object based storing in redux [read in my blog](https://www.sandipsatyal.com.np/blog/object_based_storage "Object based Storing")
-  - React Query for api calls
+- Object based storing in redux
+- React Query for api calls
